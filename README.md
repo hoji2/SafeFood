@@ -23,8 +23,12 @@
 - Javascript
 
 ### Back-End
-- Spring Framework
-- MySQL
+- Spring Boot
+  1) Starter Project
+    - JDBC API
+    - MySQL Driver
+    - Spring Data JPA
+    - Spring Web
 
 ### BlockChain
 - Ethereum
