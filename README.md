@@ -24,21 +24,15 @@
 
 ### Back-End
 - Spring Boot
-  1. Starter Project
-    - JDBC API
-    - MySQL Driver
-    - Spring Data JPA
-    - Spring Web
-
-### BlockChain
-- Ethereum
-- Docker
-- HyperLedger Fabric
-- Solidity
+  - Gradle 
+  - JDBC API
+  - MySQL Driver
+  - Spring Data JPA
+  - Spring Web
 
 ### Management Tools
 - Git
-- Jira 
+- Swagger 
 
 ### Service
 - AWS EC2
