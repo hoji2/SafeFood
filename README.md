@@ -10,7 +10,7 @@
 
 # SafeFood
 
-현대인의 건강한 식습관을 
+현대인의 건강한 식습관을 책임지는 
 
 ## Requirements
 
