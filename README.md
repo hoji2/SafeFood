@@ -24,7 +24,7 @@
 
 ### Back-End
 - Spring Boot
-  1) Starter Project
+  1. Starter Project
     - JDBC API
     - MySQL Driver
     - Spring Data JPA
