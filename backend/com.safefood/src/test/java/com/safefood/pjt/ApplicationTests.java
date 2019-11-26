@@ -1,10 +1,10 @@
-package com.safeood.pjt;
+package com.safefood.pjt;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SafefoodApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {
