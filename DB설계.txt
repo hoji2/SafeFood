@@ -1,0 +1,70 @@
+회원
+- 회원번호(PK,Auto)
+- 아이디
+- 성별[남/여]
+- 나이
+- 키
+- 몸무게
+
+알레르기
+- 번호
+- 회원번호
+- context
+
+섭취
+- 섭취번호(PK,Auto)
+- 회원아이디(FK) / 1:N
+- 섭취날짜
+
+식품영양
+
+- 식품아이디(PK,Auto)
+- NUM : 번호
+- FOOD_CD : 식품코드(중요)
+- 식품군
+- 식품이름
+- 1회 제공량
+- 열량(KCAL)
+- 탄수화물 carbohydrate
+- 단백질 protein
+- 지방 fat
+- 당류 sugars
+- 나트륨 natrium
+- 콜레스트롤 cholesterol
+- 포화지방산 fattyacid
+- 트랜스지방 transfat
+- 가공업체명 ANIMAL_PLANT
+- 구축년도 BGN_YEAR
+- 자료원 FOOD_GROUP
+
+식품원재료DB
+
+- 인허가 번호
+- 업소명
+- 품목제조번호 (중요)
+- 허가일자
+- 품목명
+- 유형
+- 원재료
+
+=========================
+
+1. controller
+
+2. model 
+
+2-1 entity(dto)
+ 
+3. service(interface)
+
+4. serviceimpl
+
+5. repository(dao)
+
+6. support
+
+6-1 xmlparser
+
+7. config ? 
+
+
