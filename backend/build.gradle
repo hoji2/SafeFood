@@ -17,6 +17,10 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	// httpClient DI 주입 -> RestAPI 설정
+	compile 'org.apache.httpcomponents:httpclient:4.5.10'
+	compile 'org.apache.commons:commons-configuration2:2.1'
+	compile 'commons-beanutils:commons-beanutils:1.9.3'
 }
 
 test {
