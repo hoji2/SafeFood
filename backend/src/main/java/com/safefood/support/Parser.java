@@ -2,29 +2,38 @@ package com.safefood.support;
 
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-@Configuration
+@Component
+@ConfigurationProperties
 public class Parser {
 
-	@Value("${FoodRestAPI_Keyid}")
+	public static final Logger logger = LoggerFactory.getLogger(Parser.class);
+	
+	@Value("${foodrestapi.key}")
 	private String keyid;
 
-	@Value("${FoodRestAPI_Food_Nutrition}")
+	@Value("${foodrestapi.food.nutrition}")
 	private String food_nutrition;
 
-	@Value("${FoodRestAPI_Food_Material}")
+	@Value("${foodrestapi.food.material}")
 	private String food_material;
 	
 	@Bean
-	public void Parser() {
-//		System.out.println("parser()");
-		LoadData(1,10);
+	public void setParser() {
+		LoadData(3, 50);
 	}
+	
 	@Bean
 	private void LoadData(int st, int end) {
 		HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
@@ -38,11 +47,10 @@ public class Parser {
 		RestTemplate restTemplate = new RestTemplate(factory);
 		
 		//keyid : 38f62c6a738d4f8e8165
-		//service id : 식품 영양DB(I0750), 식품 원재료DB(C002)
+		//service id : 식품영양 DB(I0750), 식품원재료DB(C002)
 		
-		String url="http://openapi.foodsafetykorea.go.kr/api/38f62c6a738d4f8e8165/I0750/xml/"+st+"/"+end;
-//		String url="http://openapi.foodsafetykorea.go.kr/api/"+keyid+"/"+food_nutrition+"/xml/"+st+"/"+end;
-//		System.out.println("완료 : "+url);
+		String url="http://openapi.foodsafetykorea.go.kr/api/"+keyid+"/"+food_nutrition+"/xml/"+st+"/"+end;
+		logger.info("완료 : "+url);
 		String obj=restTemplate.getForObject(url, String.class);
 		System.out.println(obj);	
 	}
